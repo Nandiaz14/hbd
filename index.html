@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy Birthday🥳🥳🥳</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+    <style>
+      /*Importing Google Fonts */
+      @import url("https://fonts.googleapis.com/css2?family=Miniver&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      :root {
+        /*colors*/
+        --white-color: #ffff;
+        --dark-color: #252525;
+        --primary-color: #f8b3c7;
+        --secondary-color: #f3961c;
+        --light-pink-color: #faf4f5;
+        --medium-gray-color: #ccc;
+
+        /*font size*/
+        --font-size-s: 0.9rem;
+        --font-size-n: 1rem;
+        --font-size-m: 1.12rem;
+        --font-size-l: 1.5rem;
+        --font-size-xl: 2rem;
+        --font-size-xxl: 2.3rem;
+
+        /* Font-weight-*/
+        --font-weight-normal: 400;
+        --font-weight-medium: 500;
+        --font-weight-semibold: 600;
+        --font-weight-bold: 700;
+
+        /* Border radius */
+        --border-radius-s: 8px;
+        --border-radius-m: 30px;
+        --border-radius-circle: 50%;
+
+        /* Site max width */
+        --site-max-width: 1300px;
+      }
+
+      /*stylings for whole size*/
+      ul {
+        list-style: none;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      button {
+        cursor: pointer;
+        border: none;
+        background: none;
+      }
+
+      img {
+        width: 100%;
+      }
+
+      .section-content {
+        margin: 0 auto;
+        padding: 0 20px;
+        max-width: var(--site-max-width);
+      }
+
+      .section-title {
+        text-align: center;
+        padding: 60px 0px 100px;
+        text-transform: uppercase;
+        font-size: var(--font-size-xl);
+      }
+
+      .section-title::after {
+        content: "";
+        width: 80px;
+        height: 5px;
+        display: block;
+        margin: 10px auto 0;
+        border-radius: var(--border-radius-s);
+        background: var(--secondary-color);
+      }
+
+      /*navbar styling*/
+      header {
+        position: fixed;
+        width: 100%;
+        z-index: 5;
+        background: var(--primary-color);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      header .navbar {
+        display: flex;
+        padding: 15px 20px;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .navbar .nav-logo .logo-text {
+        color: var(--white-color);
+        font-size: var(--font-size-l);
+        font-weight: var(--font-weight-semibold);
+      }
+
+      .navbar .nav-menu {
+        display: flex;
+        gap: 10px;
+      }
+
+      .navbar .nav-menu .nav-link {
+        padding: 10px 18px;
+        font-size: var(--font-size-m);
+        color: var(--white-color);
+        border-radius: var(--border-radius-m);
+        transition: 0.3s ease;
+      }
+
+      .navbar .nav-menu .nav-link:hover {
+        color: var(--primary-color);
+        background: var(--secondary-color);
+      }
+
+      .navbar :where(#menu-close-button, #menu-open-button) {
+        display: none;
+      }
+
+      /* Audio player styling */
+      audio {
+        margin: 10px 0;
+        width: 250px;
+        height: 40px;
+      }
+
+      .hero-section {
+        min-height: 100vh;
+        background: var(--primary-color);
+        padding-top: 100px;
+      }
+
+      .hero-section .section-content {
+        display: flex;
+        align-items: center;
+        min-height: calc(100vh - 100px);
+        color: var(--white-color);
+        justify-content: space-between;
+      }
+
+      .hero-section .hero-details .title {
+        font-size: var(--font-size-xxl);
+        color: var(--secondary-color);
+        font-family: "Miniver", sans-serif;
+        margin-bottom: 20px;
+      }
+
+      .hero-section .hero-details .description {
+        max-width: 90%;
+        margin: 24px 0px 40px;
+        font-size: var(--font-size-n);
+        line-height: 1.6;
+        text-align: justify;
+      }
+
+      .hero-section .hero-image-wrapper {
+        max-width: 500px;
+        margin-left: 30px;
+      }
+
+      /*about styling*/
+      .about-section {
+        padding: 80px 0;
+        background: var(--light-pink-color);
+      }
+
+      .about-section .section-content {
+        display: flex;
+        gap: 50px;
+        align-items: center;
+        justify-content: space-around;
+      }
+
+      .about-section .about-image-wrapper .about-image {
+        width: 400px;
+        height: 400px;
+        object-fit: cover;
+        border-radius: var(--border-radius-circle);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .about-section .about-details .section-title {
+        padding: 0 0 30px 0;
+      }
+
+      .about-section .about-details {
+        max-width: 55%;
+      }
+
+      .about-section .about-details .text {
+        line-height: 1.8;
+        margin: 30px 0;
+        text-align: justify;
+        font-size: var(--font-size-m);
+      }
+
+      h3 {
+        text-align: center;
+        color: #000000;
+        font-family: "Miniver", sans-serif;
+        font-size: var(--font-size-xl);
+      }
+
+      /*galeri styling*/
+      .galeri-section {
+        padding: 80px 0;
+        text-align: center;
+        background: white;
+      }
+
+      .galeri-section .section-title {
+        padding: 0 0 50px 0;
+      }
+
+      .galeri-section .galeri-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        margin-top: 30px;
+      }
+
+      .galeri-section .galeri-list .galeri-item {
+        overflow: hidden;
+        border-radius: var(--border-radius-s);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+      }
+
+      .galeri-section .galeri-item:hover {
+        transform: translateY(-5px);
+      }
+
+      .galeri-section .galeri-item .galeri-image {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        cursor: zoom-in;
+        transition: 0.3s ease;
+      }
+
+      .galeri-section .galeri-item:hover .galeri-image {
+        transform: scale(1.1);
+      }
+
+      /* Tablet Styles */
+      @media screen and (max-width: 1024px) {
+        :root {
+          --font-size-m: 1rem;
+          --font-size-l: 1.3rem;
+          --font-size-xl: 1.6rem;
+          --font-size-xxl: 2rem;
+        }
+
+        .section-content {
+          padding: 0 30px;
+        }
+
+        .about-section .section-content {
+          gap: 40px;
+        }
+
+        .about-section .about-image-wrapper .about-image {
+          width: 350px;
+          height: 350px;
+        }
+
+        .galeri-section .galeri-list {
+          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+          gap: 25px;
+        }
+      }
+
+      /* Mobile Styles */
+      @media screen and (max-width: 768px) {
+        :root {
+          --font-size-s: 0.8rem;
+          --font-size-n: 0.9rem;
+          --font-size-m: 1rem;
+          --font-size-l: 1.2rem;
+          --font-size-xl: 1.4rem;
+          --font-size-xxl: 1.6rem;
+        }
+
+        body.show-mobile-menu header::before {
+          content: "";
+          position: fixed;
+          left: 0;
+          top: 0;
+          height: 100%;
+          width: 100%;
+          backdrop-filter: blur(5px);
+          background: rgba(0, 0, 0, 0.5);
+          z-index: 1;
+        }
+
+        .navbar .nav-logo .logo-text {
+          font-size: var(--font-size-m);
+        }
+
+        .navbar :where(#menu-close-button, #menu-open-button) {
+          display: block;
+          font-size: var(--font-size-l);
+          color: var(--white-color);
+        }
+
+        .navbar #menu-close-button {
+          position: absolute;
+          right: 30px;
+          top: 30px;
+          color: var(--dark-color);
+        }
+
+        .navbar .nav-menu {
+          position: fixed;
+          left: -300px;
+          top: 0;
+          width: 300px;
+          height: 100vh;
+          flex-direction: column;
+          align-items: center;
+          padding-top: 100px;
+          background: var(--white-color);
+          transition: left 0.3s ease;
+          z-index: 2;
+          box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        body.show-mobile-menu .navbar .nav-menu {
+          left: 0;
+        }
+
+        .navbar .nav-menu .nav-link {
+          color: var(--dark-color);
+          display: block;
+          margin: 15px 0;
+          font-size: var(--font-size-l);
+          padding: 15px 20px;
+          width: 100%;
+          text-align: center;
+        }
+
+        .navbar .nav-menu .nav-link:hover {
+          background: var(--light-pink-color);
+          color: var(--primary-color);
+        }
+
+        /* Audio player mobile */
+        audio {
+          width: 200px;
+          height: 35px;
+          margin: 5px 0;
+        }
+
+        .hero-section {
+          padding-top: 80px;
+        }
+
+        .hero-section .section-content {
+          gap: 40px;
+          text-align: center;
+          padding: 20px;
+          flex-direction: column-reverse;
+          justify-content: center;
+          min-height: calc(100vh - 80px);
+        }
+
+        .hero-section .hero-details .description {
+          max-width: 100%;
+          font-size: var(--font-size-s);
+          margin: 20px 0;
+        }
+
+        .hero-section .hero-image-wrapper {
+          max-width: 250px;
+          margin-left: 0;
+        }
+
+        .about-section {
+          padding: 60px 0;
+        }
+
+        .about-section .section-content {
+          gap: 40px;
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .about-section .about-details {
+          max-width: 100%;
+        }
+
+        .about-section .about-image-wrapper .about-image {
+          width: 280px;
+          height: 280px;
+          max-width: 90%;
+        }
+
+        .about-section .about-details .text {
+          font-size: var(--font-size-s);
+          line-height: 1.6;
+          text-align: justify;
+        }
+
+        .galeri-section {
+          padding: 60px 0;
+        }
+
+        .galeri-section .galeri-list {
+          grid-template-columns: 1fr;
+          gap: 20px;
+        }
+
+        .galeri-section .galeri-item .galeri-image {
+          height: 200px;
+        }
+
+        .section-title {
+          padding: 40px 0 50px;
+          font-size: var(--font-size-l);
+        }
+      }
+
+      /* Very small mobile devices */
+      @media screen and (max-width: 480px) {
+        .section-content {
+          padding: 0 15px;
+        }
+
+        .navbar .nav-logo .logo-text {
+          font-size: var(--font-size-s);
+        }
+
+        .hero-section .hero-details .title {
+          font-size: var(--font-size-xl);
+        }
+
+        .hero-section .hero-details .description {
+          font-size: 0.8rem;
+        }
+
+        .about-section .about-image-wrapper .about-image {
+          width: 250px;
+          height: 250px;
+        }
+
+        audio {
+          width: 180px;
+          height: 30px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <audio controls>
+        <source
+          src="Bukti - Virgoun Piano Karaoke by Andre Panggabean.mp3"
+          type="audio/mp3"
+        />
+      </audio>
+      <nav class="navbar section-content">
+        <a href="#" class="nav-logo">
+          <h2 class="logo-text">Happy Birthday🥳🥳🥳</h2>
+        </a>
+        <ul class="nav-menu">
+          <button id="menu-close-button" class="fas fa-times"></button>
+          <li class="nav-item">
+            <a href="#" class="nav-link">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="#about" class="nav-link">About</a>
+          </li>
+          <li class="nav-item">
+            <a href="#galeri" class="nav-link">Galeri</a>
+          </li>
+        </ul>
+        <button id="menu-open-button" class="fas fa-bars"></button>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero-section">
+        <div class="section-content">
+          <div class="hero-details">
+            <h2 class="title">Raden Mahendra Algantara</h2>
+            <p class="description">
+              Hiii RADEN MAHENDRA ALGANTARA… sekarangg tepatt 1 oktober 2025
+              kamuu dan akuu bertambah umur, lucuu yahh di hari yg sama d bulan
+              yg sama kita rayain sama-sama jugaa🥰 aku cuma mau ngucapin
+              SELAMATTTTT BERTAMBAHH UMURRR Raden Mahendra Algantara
+              Sayanggkuuuu Cintakuuu Duniaakuuuu
+              Punyaakuuu😻😻😻😻😻😻😻😻😻😻😻😻😻😻😻😻😻😻😻😻😻😻🤍🤍🤍🤍🤍🤍🤍🤍🤍🤍🤍🤍🤍🤍🤍🤍🤍🤍🤍🤍🤍🤍🤍🤍🤍🤍🤍🤍🤍🤍🤍🤍🤍🤍🤍🤍🤍🤍🤍🤍🤍🤍🤍🤍🤍🤍🤍🤍🤍🤍🤍🤍🤍🤍🤍🤍🤍🤍🤍🤍🤍🤍🤍🤍🤍🤍🤍🤍🤍🤍🤍🤍🤍🤍🤍🤍🤍🤍🤍🤍🤍🤍🤍🤍🤍🤍🤍🤍🤍🤍🤍🤍🤍🤍🤍🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻
+              semoga di harii yg spesial inii kamu slalu di berii kesehatan
+              kebahagia dilancarkan segala urusan dan pekerjaannya pokonya
+              semuaanya doa yg terbaikk dann semoga hubungan kita selalu baik
+              romantis dan yang pasti bareng sampe kapanpun aamiin🤲🏻🤲🏻
+            </p>
+          </div>
+          <div class="hero-image-wrapper">
+            <!-- Hero image can be added here -->
+          </div>
+        </div>
+      </section>
+
+      <!--About section-->
+      <section class="about-section" id="about">
+        <div class="section-content">
+          <div class="about-image-wrapper">
+            <img
+              src="WhatsApp Image 2025-09-28 at 22.54.21.jpeg"
+              alt="About"
+              class="about-image"
+            />
+          </div>
+          <div class="about-details">
+            <h3 class="section-title">"Raden Mahendra Algantara"</h3>
+            <p class="text">
+              kamuu adalah lelaki terbaikk yang saat ini bersamaku, aku bertemu
+              denganmu secara tidak di duga dan tidak di sangka, awalnya aku
+              bingung kenapa aku bisa secinta ini denganmu?setelah aku
+              mengenalmu dengan lebih dalam.. kamuu??orang yg begitu sempurna
+              dan kmuu orang yg begituu mengusahakan apapun untukku, kmuu adalah
+              definisi lelaki tampan yang sesungguhnya, kmuu terlalu baikk,
+              effort yg kmu kasih terlalu besar untuk bisa di baless, perhatian
+              perhatian kecil yg kamu beri sangat amat berarti , dan tingkah
+              lakumu yg begitu lucuu dann aku suka ituu<br /><br />
+
+              kamuu sederhana dan aku mencintaimu atas kesederhanaan ituu, tapii
+              kamu tau??cinta yang sesungguhnya tidak pernah punya alasan cintaa
+              bukan tentang aku mencintaimu karena segala kesempurnaanmu tapii
+              aku mencintaimu tanpa alasan yang harus kujelaskan, jika aku
+              mencintaimu karena kamu tampan berarti itu bukan cinta jika aku
+              mencintaimu karena segala usahamu berarti itu bukan cinta dan jika
+              aku mencintaimu karena kamu baik itu juga bukan cinta, cinta yang
+              sesungguhnya adalah kita gapernah tau alasan kita mencintai
+              seseorang ituu.<br /><br />
+
+              kamu ituu memberikan aku kenyamaan yng tidak pernah aku temui di
+              lelaki manapun, kamu memperlakukan ku sebaik baik nyaa, kamu
+              menjaga tutur katamu agar tidak menyakiti perasaan ku, kamu
+              memberikan segalanya untukku dan aku bersyukur dan seberuntung itu
+              di pertemukan denganmu lelaki terbaikkuu <br /><br />
+              namunn, aku minta maaf jika masih sering membuatmu kecewa, aku
+              belum bisa jadi yang terbaik untukmu, dan aku masih sekeras kepala
+              ituu.<br /><br />
+
+              jika ditanya 'sesayang apa aku denganmu?' jawabannya pastii
+              sayangg bangettttttt bahkan sayangnya aku ke kamu melebihi sayang
+              nya aku ke diriku sendiri.. kamu sangat berarti bagiku, aku tidak
+              pernah dan tidak akan pernah mau kehilangan dirimu, aku sangatt
+              amatt takut kamu pergi meninggalkan ku entah sehancur apa diriku
+              saat kelak kamu pergi, dan aku harap itu tidak akan pernah
+              terjadii aku benar benar tidak ingin kehilangan orang sebaikmu
+              RADEN MAHENDRA ALGANTARA my best man, aku hanya ingin bersamamu
+              selamanyaa<br />
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="galeri-section" id="galeri">
+        <h2 class="section-title">Galeri</h2>
+        <div class="section-content">
+          <ul class="galeri-list">
+            <li class="galeri-item">
+              <img
+                src="WhatsApp Image 2025-09-28 at 22.53.09.jpeg"
+                alt="Memory 1"
+                class="galeri-image"
+              />
+            </li>
+            <li class="galeri-item">
+              <img src="3.jpeg" alt="Memory 2" class="galeri-image" />
+            </li>
+            <li class="galeri-item">
+              <img
+                src="WhatsApp Image 2025-09-28 at 22.54.18.jpeg"
+                alt="Memory 3"
+                class="galeri-image"
+              />
+            </li>
+            <li class="galeri-item">
+              <img
+                src="WhatsApp Image 2025-09-28 at 22.54.18 (1).jpeg"
+                alt="Memory 4"
+                class="galeri-image"
+              />
+            </li>
+            <li class="galeri-item">
+              <img
+                src="WhatsApp Image 2025-09-28 at 22.55.56.jpeg"
+                alt="Memory 5"
+                class="galeri-image"
+              />
+            </li>
+            <li class="galeri-item">
+              <img
+                src="WhatsApp Image 2025-09-28 at 22.54.18 (2).jpeg"
+                alt="Memory 6"
+                class="galeri-image"
+              />
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      const navLinks = document.querySelectorAll(".nav-menu .nav-link");
+      const menuOpenButton = document.querySelector("#menu-open-button");
+      const menuCloseButton = document.querySelector("#menu-close-button");
+
+      menuOpenButton.addEventListener("click", () => {
+        document.body.classList.toggle("show-mobile-menu");
+      });
+
+      menuCloseButton.addEventListener("click", () => menuOpenButton.click());
+
+      navLinks.forEach((link) => {
+        link.addEventListener("click", () => menuOpenButton.click());
+      });
+
+      // Smooth scrolling for navigation links
+      navLinks.forEach((link) => {
+        link.addEventListener("click", (e) => {
+          e.preventDefault();
+          const targetId = link.getAttribute("href");
+          if (targetId !== "#") {
+            const targetSection = document.querySelector(targetId);
+            if (targetSection) {
+              targetSection.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+              });
+            }
+          }
+          // Close mobile menu after clicking
+          document.body.classList.remove("show-mobile-menu");
+        });
+      });
+    </script>
+  </body>
+</html>
